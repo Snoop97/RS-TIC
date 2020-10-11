@@ -16,7 +16,6 @@ mongoose.connect('mongodb://localhost:27017/RS_TIC_db', {useNewUrlParser: true,
             console.log("Servidor corriendo en http://localhost:3800");
         });
 
-
     })
     .catch(err => console.log(err));
 
