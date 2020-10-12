@@ -1,13 +1,14 @@
 'use strict'
 var bcrypt = require('bcrypt-nodejs');
 var User = require('../Models/user');
+var jwt = require('../Services/jwt');
+//METODOS DE PRUEBA
 
 function home(req, res){
     res.status(200).send({
         message: 'Hola mundo desde el servidor de NodeJS.'
     });
 }
-
 function pruebas(req, res){
     console.log(req.body);
     res.status(200).send({
@@ -15,6 +16,7 @@ function pruebas(req, res){
     });
 }
 
+//REGISTRO DE USUARIO
 function saveUser(req, res){
     var params = req.body;
     var user = new User();
@@ -74,6 +76,7 @@ function saveUser(req, res){
     }
 }
 
+//LOGIN DE USUARIO
 function loginUser(req, res){
     var params = req.body;
     var email = params.email;
@@ -89,9 +92,16 @@ function loginUser(req, res){
                 bcrypt.compare(password, user.password, (err, check) => {
                    if(check){
                        //devolver datos de usuario
-                            // que no devuelve el password
-                            user.password = undefined;
-                       return res.status(200).send({user});
+                       if(params.gettoken){
+                            //generar y devolver el token
+                            return res.status(200).send({
+                                token: jwt.createToken(user)
+                            });
+                       }else{
+                           // que no devuelve el password
+                           user.password = undefined;
+                           return res.status(200).send({user});
+                       }
                    }else{
                        return res.status(404).send({
                            message: 'El usuario no se ha podido identificar.'
@@ -106,9 +116,29 @@ function loginUser(req, res){
     });
 }
 
+// METODO PARA CONSEGUIR DATOS DE UN USUARIO
+function getUser(req, res){
+    var userID = req.params.id;
+    User.findById(userID, (err, user) => {
+        if(err){
+            return res.status(500).send({
+                message: 'Error en la petición.'
+            });
+        }
+        if(!user){
+            return res.status(404).send({
+                message: 'El usuario no existe.'
+            });
+        }
+        return res.status(200).send({user});
+    });
+
+}
+
 module.exports = {
     home,
     pruebas,
     saveUser,
-    loginUser
+    loginUser,
+    getUser
 }
