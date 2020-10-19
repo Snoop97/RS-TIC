@@ -9,7 +9,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/RS_TIC_db', {useNewUrlParser: true,
     useUnifiedTopology: true})
     .then(() => {
-        console.log("La conexion a la BD de la red social es correcta.");
+        console.log("La conexión a la BD de la red social es correcta.");
 
         //crear servidor
         app.listen(port, () => {

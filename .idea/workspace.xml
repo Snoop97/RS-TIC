@@ -2,11 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5c525b8-c39a-4ef4-9fbc-9a1abd6aeb96" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/Middlewares/authenticated.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/uploads/users/0-T77cRWiqsrN_UiJuNZVK2I.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/uploads/users/0Wk0lJoi0eZFY0QSjx6x4sno.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/uploads/users/3BiLpqwVusGNNniQjTJll0j3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/uploads/users/4MSIkbrwq5VOVBO_Erzv5Lxo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/uploads/users/JkBI9enVQs6QVMULz1KpvUlj.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/uploads/users/KWdYUNj0-S8Fbc0Cpv-INR3g.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/uploads/users/g66HWnTFFRWgOxJ0kd4iyNEP" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/uploads/users/tiWeMbYaiQXUwhr6di7awFoe.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/uploads/users/xzzXiAu9MVqOe0Juk7MqN09F.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/Controllers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/Controllers/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/Routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/Routes/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,12 +34,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ijyZOVabcdcwyICnHSA39GxHg3" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -64,12 +77,18 @@
       <option name="presentableId" value="Default" />
       <updated>1602435350685</updated>
       <workItem from="1602435351766" duration="27326000" />
-      <workItem from="1602539995577" duration="3848000" />
+      <workItem from="1602539995577" duration="8297000" />
+      <workItem from="1602645056169" duration="686000" />
+      <workItem from="1602805869821" duration="8453000" />
+      <workItem from="1603078734622" duration="6518000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="496" y="89" key="FileChooserDialogImpl" timestamp="1602441715369">
