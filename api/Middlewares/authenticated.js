@@ -24,7 +24,7 @@ exports.ensureAuth = function (req, res, next){
             message: 'El token no es válido.'
         });
     }
-
+//setear el user
     req.user = payLoad;
 
     next();

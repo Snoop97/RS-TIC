@@ -2,49 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5c525b8-c39a-4ef4-9fbc-9a1abd6aeb96" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/view/.browserslistrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/angular.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/e2e/protractor.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/e2e/src/app.e2e-spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/e2e/src/app.po.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/e2e/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/karma.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/src/app/app-routing.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/src/app/app.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/src/app/app.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/src/app/app.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/src/app/app.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/src/app/app.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/src/app/app.routing.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/src/app/components/login/login.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/src/app/components/login/login.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/src/app/components/register/register.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/src/app/components/register/register.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/src/app/models/follow.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/src/app/models/message.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/src/app/models/publication.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/src/app/models/user.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/src/app/services/global.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/src/app/services/user.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/src/assets/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/src/environments/environment.prod.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/src/environments/environment.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/src/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/src/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/src/polyfills.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/src/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/src/test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/tsconfig.app.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/tsconfig.spec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/tslint.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/Controllers/follow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/Routes/follow.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/Middlewares/authenticated.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/Middlewares/authenticated.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/Models/follow.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/Models/follow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/Models/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/Models/message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/Models/publication.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/Models/publication.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/view/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/view/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/src/app/components/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/view/src/app/components/register/register.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/src/app/services/global.ts" beforeDir="false" afterPath="$PROJECT_DIR$/view/src/app/services/global.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/src/app/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/view/src/app/services/user.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,10 +24,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
         <option value="HTML File" />
         <option value="TypeScript File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -122,7 +92,7 @@
       <workItem from="1603078734622" duration="10957000" />
       <workItem from="1603141619993" duration="10221000" />
       <workItem from="1603244326397" duration="3008000" />
-      <workItem from="1603291779544" duration="1932000" />
+      <workItem from="1603291779544" duration="17669000" />
     </task>
     <servers />
   </component>
