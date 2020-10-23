@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5c525b8-c39a-4ef4-9fbc-9a1abd6aeb96" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/Controllers/follow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/Routes/follow.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/Middlewares/authenticated.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/Middlewares/authenticated.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/Models/follow.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/Models/follow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/Models/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/Models/message.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/Models/publication.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/Models/publication.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/view/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/view/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/src/app/components/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/view/src/app/components/register/register.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/src/app/services/global.ts" beforeDir="false" afterPath="$PROJECT_DIR$/view/src/app/services/global.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/src/app/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/view/src/app/services/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/Controllers/follow.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/Controllers/follow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/Routes/follow.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/Routes/follow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/src/app/components/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/src/app/components/register/register.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +83,7 @@
       <workItem from="1603078734622" duration="10957000" />
       <workItem from="1603141619993" duration="10221000" />
       <workItem from="1603244326397" duration="3008000" />
-      <workItem from="1603291779544" duration="17669000" />
+      <workItem from="1603291779544" duration="25710000" />
     </task>
     <servers />
   </component>

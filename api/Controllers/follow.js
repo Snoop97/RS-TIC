@@ -6,7 +6,7 @@
 var mongoosePaginate = require('mongoose-pagination');
 
 var User = require('../Models/user');
-//var Follow = require('../Models/follow');
+var Follow = require('../Models/follow');
 
 function saveFollow(req, res){
     var params = req.body;
