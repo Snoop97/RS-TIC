@@ -240,7 +240,7 @@ async function followUserId(user_id){
 
     var following_clean = [];
 
-    followed.forEach((follow) => {
+    following.forEach((follow) => {
         following_clean.push(follow.user);
     });
 
@@ -258,9 +258,11 @@ async function followUserId(user_id){
 }
 
 function getCounters(req, res){
-    let userID = req.user.sub;
+    var userID = req.user.sub;
     if(req.params.id){
-        userID = req.params.id;
+        getCountFollow(req.params.id).then((value) => {
+            return res.status(200).send(value);
+        });
     }else{
         getCountFollow(userID).then((value) => {
             return res.status(200).send(value);
@@ -269,23 +271,26 @@ function getCounters(req, res){
 }
 
 async function getCountFollow(user_id){
-    try {
-        let following = await Follow.countDocuments(
-            { "user": user_id },
-            (err,result) => {
-                return result
-            }
-        );
-        let followed = await Follow.countDocuments(
-            { "followed": user_id }
-        ).then(count => count);
+        var following = await Follow.countDocuments({
+            "user": user_id
+        }).exec().then((count) => {
+            return count;
+        }).catch((err) => {
+            return handleError(err);
+        });
+
+        var followed = await Follow.countDocuments({
+            "followed": user_id
+        }).exec().then((count) => {
+            return count;
+        }).catch((err) => {
+            return handleError(err);
+        });
+
         return {
             following,
             followed
         }
-    }catch (e) {
-        console.log(e);
-    }
 }
 
 //EDICIÓN DE DATOS DE USUARIO
