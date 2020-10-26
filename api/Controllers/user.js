@@ -2,6 +2,7 @@
 var bcrypt = require('bcrypt-nodejs');
 var mongoosePaginate = require('mongoose-pagination');
 var User = require('../Models/user');
+var Follow = require('../Models/follow');
 var jwt = require('../Services/jwt');
 var fs = require('fs');
 var path = require('path');
@@ -135,8 +136,45 @@ function getUser(req, res){
                 message: 'El usuario no existe.'
             });
         }
-        return res.status(200).send({user});
+        followThisUser(req.user.sub, userID).then((value) => {
+            user.password = undefined;
+            return res.status(200).send({
+                user,
+                following: value.following,
+                followed: value.followed
+            });
+        });
     });
+}
+
+
+/* FUNCIÓN ASÍNCRONA CON LLAMADAS ASÍNCRONAS DENTRO, CUANDO SE EJECUTA ALGO SE ESPERA A QUE SE CONSIGA
+   EL RESULTADO Y DESPUÉS PASA A LA SIGUIENTE */
+/* AWAIT ES PARA QUE ESPERE A QUE EL FIND NOS DEVUELVA EL RESULTADO Y LO GUARDA EN CADA VARIABLE, COMO
+SI FUERA ASÍNCRONO*/
+async function followThisUser(identity_user_id, user_id){
+
+    var following = await Follow.findOne({
+        "user": identity_user_id,
+        "followed": user_id
+    }).exec().then((follow) => {
+        return follow;
+    }).catch((err) => {
+        return handleError(err);
+    });
+
+    var followed = await Follow.findOne({
+        "user": user_id,
+        "followed": identity_user_id
+    }).exec().then((follow) => {
+        return follow;
+    }).catch((err) => {
+        return handleError(err);
+    });
+    return {
+        following: following,
+        followed: followed
+    }
 }
 
 //DEVOLVER UN LISTADO DE USUARIO
@@ -151,7 +189,8 @@ function getUsers(req, res){
     User.find().sort('_id').paginate(page, itemsPerPage, (err, users, total) => {
         if(err){
             return res.status(500).send({
-                message: 'Error en la petición.'
+                message: 'Error en la petición.',
+                err
             });
         }
         if(!users){
@@ -159,12 +198,94 @@ function getUsers(req, res){
                 message: 'No hay usuarios disponibles'
             });
         }
-        return res.status(200).send({
-            users,
-            total,
-            pages: Math.ceil(total/itemsPerPage)
+
+        followUserId(identity_user_id).then((response) => {
+
+            return res.status(200).send({
+                message: "Resultados:",
+                users,
+                users_following: response.following,
+                users_followed: response.followed,
+                total,
+                pages: Math.ceil(total/itemsPerPage)
+            });
         });
     });
+}
+
+async function followUserId(user_id){
+    var following = await Follow.find({
+        "user": user_id
+    }).select({
+        '_id': 0,
+        '__v': 0,
+        'user': 0
+    }).exec().then((follows) => {
+        return follows;
+    }).catch((err) => {
+        return handleError(err);
+    });
+
+    var followed = await Follow.find({
+        "followed": user_id
+    }).select({
+        '_id': 0,
+        '__v': 0,
+        'followed': 0
+    }).exec().then((follows) => {
+        return follows;
+    }).catch((err) => {
+        return handleError(err);
+    });
+
+    var following_clean = [];
+
+    followed.forEach((follow) => {
+        following_clean.push(follow.user);
+    });
+
+    var followed_clean = [];
+
+    followed.forEach((follow) => {
+        followed_clean.push(follow.user);
+    });
+
+    return {
+        following: following_clean,
+        followed: followed_clean
+    }
+
+}
+
+function getCounters(req, res){
+    let userID = req.user.sub;
+    if(req.params.id){
+        userID = req.params.id;
+    }else{
+        getCountFollow(userID).then((value) => {
+            return res.status(200).send(value);
+        });
+    }
+}
+
+async function getCountFollow(user_id){
+    try {
+        let following = await Follow.countDocuments(
+            { "user": user_id },
+            (err,result) => {
+                return result
+            }
+        );
+        let followed = await Follow.countDocuments(
+            { "followed": user_id }
+        ).then(count => count);
+        return {
+            following,
+            followed
+        }
+    }catch (e) {
+        console.log(e);
+    }
 }
 
 //EDICIÓN DE DATOS DE USUARIO
@@ -281,8 +402,9 @@ module.exports = {
     loginUser,
     getUser,
     getUsers,
+    getCounters,
     updateUser,
     uploadImage,
-    getImageFile
+    getImageFile,
 }
 

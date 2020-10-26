@@ -26,7 +26,6 @@ exports.ensureAuth = function (req, res, next){
     }
 //setear el user
     req.user = payLoad;
-
     next();
 
 }
