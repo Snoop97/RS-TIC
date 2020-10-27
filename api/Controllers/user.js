@@ -3,6 +3,7 @@ var bcrypt = require('bcrypt-nodejs');
 var mongoosePaginate = require('mongoose-pagination');
 var User = require('../Models/user');
 var Follow = require('../Models/follow');
+var Publication = require('../Models/publication');
 var jwt = require('../Services/jwt');
 var fs = require('fs');
 var path = require('path');
@@ -287,9 +288,18 @@ async function getCountFollow(user_id){
             return handleError(err);
         });
 
+        var publications = await Publication.countDocuments({
+            "user": user_id
+        }).exec().then((count) => {
+            return count;
+        }).catch((err) => {
+            return handleError(err);
+        });
+
         return {
             following,
-            followed
+            followed,
+            publications
         }
 }
 
