@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5c525b8-c39a-4ef4-9fbc-9a1abd6aeb96" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/Controllers/publication.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/Routes/publication.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/uploads/publications/OlcwksSLzg2oc66bsqP7O2vZ.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/uploads/publications/_6Rzp5cMC80WU0t9xwkeQpr7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/uploads/publications/c__sYatv7vtgOLCzgebPWwWn.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/Controllers/message.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/Routes/message.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/Controllers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/Controllers/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/Models/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/Models/message.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/app.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +91,8 @@
       <workItem from="1603291779544" duration="26326000" />
       <workItem from="1603647074793" duration="303000" />
       <workItem from="1603647497486" duration="23286000" />
-      <workItem from="1603735802896" duration="14173000" />
+      <workItem from="1603735802896" duration="14291000" />
+      <workItem from="1603844778538" duration="9856000" />
     </task>
     <servers />
   </component>
