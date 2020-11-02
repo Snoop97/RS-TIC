@@ -305,32 +305,49 @@ async function getCountFollow(user_id){
 
 //EDICIÓN DE DATOS DE USUARIO
 function updateUser(req, res){
-    var userID = req.params.id;
-    var update = req.body;
+    let userID = req.params.id;
+    let update = req.body;
+    var user = new User();
 
     //borrando la propiedad password
     delete update.password;
+
+    //Si el ID que llega por la url es diferente al ID del usuario identificado
     if(userID != req.user.sub){
         return res.status(500).send({
            message: 'No tiene permiso para actualizar los datos del usuario.'
         });
     }
-
-    User.findByIdAndUpdate(userID, update, {new: true}, (err, userUpdate) => {
-        if(userID != req.user.sub){
-            return res.status(500).send({
-                message: 'No tiene permiso para actualizar los datos del usuario.'
+    //Evitar actualizar datos duplicados
+    User.find({
+        $or: [
+            { email: user.email.toLowerCase()},
+            { nick: user.nick.toLowerCase() }
+        ]
+    }).exec((err, user) => {
+            if(user && user._id != userID){
+                console.log(update.email);
+                return res.status(500).send({
+                   message: 'Correo o contraseña no válidos.'
+                });
+            }
+        User.findByIdAndUpdate(userID, update, {new: true}, (error, userUpdated) => {
+            if(error){
+                return res.status(500).send({
+                    message: 'No se ha podido procesar la petición para actualizar el usuario.'
+                });
+            }
+            if(!userUpdated){
+                return res.status(404).send({
+                    message: 'No se ha podido actualizar el usuario.'
+                });
+            }
+            return res.status(200).send({
+                user: userUpdated
             });
-        }
-        if(!userUpdate){
-            return res.status(400).send({
-                message: 'No se ha podido actualizar los datos del usuario.'
-            });
-        }
-        return res.status(200).send({
-           user: userUpdate
         });
-    });
+
+        });
 
 }
 

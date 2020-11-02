@@ -1,5 +1,4 @@
 'use strict'
-
 var mongoose = require('mongoose');
 var app = require('./app');
 var port = 3800;
@@ -18,6 +17,7 @@ mongoose.connect('mongodb://localhost:27017/RS_TIC_db', {useNewUrlParser: true,
 
     })
     .catch(err => console.log(err));
+
 
 
 
