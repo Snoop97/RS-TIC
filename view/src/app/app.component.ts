@@ -1,6 +1,8 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
 import { Router, ActivatedRoute, Params } from "@angular/router";
 import { UserService } from './services/user.service';
+import { GLOBAL } from "./services/global";
+
 
 @Component({
   selector: 'app-root',
@@ -11,6 +13,7 @@ import { UserService } from './services/user.service';
 export class AppComponent implements OnInit, DoCheck{
   public title: string;
   public identity;
+  public url: string;
 
   constructor(
     private _route: ActivatedRoute,
@@ -18,6 +21,7 @@ export class AppComponent implements OnInit, DoCheck{
     private _userService: UserService
   ) {
     this.title = "RS-TIC";
+    this.url = GLOBAL.url;
   }
 
   ngOnInit(){

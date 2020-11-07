@@ -304,10 +304,10 @@ async function getCountFollow(user_id){
 }
 
 //EDICIÓN DE DATOS DE USUARIO
+
 function updateUser(req, res){
     let userID = req.params.id;
     let update = req.body;
-    var user = new User();
 
     //borrando la propiedad password
     delete update.password;
@@ -318,8 +318,24 @@ function updateUser(req, res){
            message: 'No tiene permiso para actualizar los datos del usuario.'
         });
     }
+    User.findByIdAndUpdate(userID, update, {new: true}, (error, userUpdated) => {
+        if(error){
+            return res.status(500).send({
+                message: 'No se ha podido procesar la petición para actualizar el usuario.'
+            });
+        }
+        if(!userUpdated){
+            return res.status(404).send({
+                message: 'No se ha podido actualizar el usuario.'
+            });
+        }
+        return res.status(200).send({
+            user: userUpdated
+        });
+    });
+
     //Evitar actualizar datos duplicados
-    User.find({
+    /*User.find({
         $or: [
             { email: user.email.toLowerCase()},
             { nick: user.nick.toLowerCase() }
@@ -331,25 +347,12 @@ function updateUser(req, res){
                    message: 'Correo o contraseña no válidos.'
                 });
             }
-        User.findByIdAndUpdate(userID, update, {new: true}, (error, userUpdated) => {
-            if(error){
-                return res.status(500).send({
-                    message: 'No se ha podido procesar la petición para actualizar el usuario.'
-                });
-            }
-            if(!userUpdated){
-                return res.status(404).send({
-                    message: 'No se ha podido actualizar el usuario.'
-                });
-            }
-            return res.status(200).send({
-                user: userUpdated
-            });
-        });
 
-        });
+        });*/
 
 }
+
+
 
 //SUBIR ARCHIVOS DE IMAGEN - AVATAR DE USUARIO
 function uploadImage(req, res){

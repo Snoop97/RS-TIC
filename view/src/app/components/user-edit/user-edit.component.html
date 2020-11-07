@@ -56,6 +56,18 @@
       </span>
     </p>
 
+    <div *ngIf="user.image">
+      <img src="{{ url + 'get-image-user/' +user.image }}" />
+    </div>
+
+
+    <p>
+      <label>
+        Sube tu foto de perfil
+      </label>
+      <input type="file" placeholder="Subir imagen" (change)="fileChangeEvent($event)" />
+    </p>
+
     <input type="submit" value="{{title}}" class="btn btn-warning" [disabled]="!userEditForm.form.valid" />
   </form>
 </div>

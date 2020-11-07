@@ -45,9 +45,51 @@
   background: #eee !important;
 }
 
+.navigation .avatar{
+  width: 35px;
+  height: 35px;
+  border-radius: 100px;
+  overflow: hidden;
+  margin-top: 9px;
+  margin-right: 2px;
+}
+
+.navigation .avatar img{
+  height: auto;
+  width: 35px;
+}
+
 .jumbotron{
   padding: 20px;
   border-radius: 5px;
   text-align: center;
 }
 
+.item-user .image_user{
+  width: 75px;
+  height: 35px;
+  border-radius: 100px;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.item-user .image_user img{
+  width: 35px;
+}
+
+.item-user .user_name{
+margin-top: 5px;
+}
+
+.item-user .user_name .nickname{
+  color: #969393;
+}
+
+.item-user .user_name .name-surname a{
+  color: #555;
+  font-weight: bold;
+}
+
+/*.avatar-default{
+  width: 40% !important;
+}*/

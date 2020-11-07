@@ -13,6 +13,9 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from "./components/home/home.component";
 import { UserEditComponent } from "./components/user-edit/user-edit.component";
+import { UsersComponent } from "./components/users/users.component";
+import {ChartComponent} from "./components/report/chart.component";
+
 
 @NgModule({
   declarations: [
@@ -20,14 +23,16 @@ import { UserEditComponent } from "./components/user-edit/user-edit.component";
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    UserEditComponent
+    UserEditComponent,
+    UsersComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     routing,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     appRoutingProviders
